@@ -639,15 +639,14 @@
   }
 
   function agreeCookie() {
-    let date = new Date();
-    date.setTime(date.getTime() + 1000 * 60 * 60);
-    document.cookie = 'expires=' + date.toGMTString();
-
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-7TX1KEZSDN');
 
+    let date = new Date();
+    date.setTime(date.getTime() + 1000 * 60 * 60);
+    document.cookie = 'expires=' + date.toGMTString();
     localStorage.setItem('cookie', 'agree');
 
     location.reload();
