@@ -628,6 +628,33 @@
   border: none;
   border-top: 2px solid rgba(0, 0, 0, 0.5);
 }
+.body .main .cookie {
+  position: fixed;
+  left: 10px;
+  bottom: 16px;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  text-align: center;
+  border: 3px solid navy;
+  border-radius: 20px;
+  background-color: white;
+}
+.body .main .cookie_button {
+  height: 80%;
+  margin-top: 10px;
+}
+.body .main .cookie_button_agree, .body .main .cookie_button_disagree {
+  width: 150px;
+  height: 60%;
+  border: 1px solid navy;
+  background-color: white;
+  font-size: large;
+  cursor: pointer;
+}
+.body .main .cookie_button_agree:hover, .body .main .cookie_button_disagree:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 .body .main .backtop {
   position: fixed;
   bottom: 16px;
