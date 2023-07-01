@@ -98,10 +98,6 @@
     }
   }
 
-  // 名前表示
-  let name = document.querySelector('.header_name');
-
-
   // swiper
   let smallSwiper = new Swiper('.container_content_swiper', {
     navigation: {
@@ -622,6 +618,54 @@
       e.returnValue = '';
     }
   });
+
+  // Cookie
+  let cookie = document.querySelector('.cookie');
+  let cookieAgreeButton = document.querySelector('.cookie_button_agree');
+  let cookieDisagreeButton = document.querySelector('.cookie_button_disagree');
+
+  cookieAgreeButton.addEventListener('click', () => {
+    deleteCookieForm();
+    agreeCookie();
+  });
+
+  cookieDisagreeButton.addEventListener('click', () => {
+    deleteCookieForm();
+    disagreeCookie();
+  });
+  
+  function deleteCookieForm() {
+    cookie.style.display = 'none';
+  }
+
+  function agreeCookie() {
+    let date = new Date();
+    date.setTime(date.getTime() + 1000 * 60 * 60);
+    document.cookie = 'expires=' + date.toGMTString();
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7TX1KEZSDN');
+
+    localStorage.setItem('cookie', 'agree');
+
+    location.reload();
+  }
+
+  function disagreeCookie() {
+    let date = new Date();
+    date.setTime(0);
+    document.cookie = 'expires=' + date.toGMTString();
+
+    localStorage.setItem('cookie', 'disagree');
+
+    location.reload();
+  }
+  
+  if (localStorage.getItem('cookie')) {
+    deleteCookieForm();
+  }
 
   // ページトップに戻るボタン
   let backTop = document.querySelector('.backtop');
