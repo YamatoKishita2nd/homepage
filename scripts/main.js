@@ -624,12 +624,14 @@
   let cookieAgreeButton = document.querySelector('.cookie_button_agree');
   let cookieDisagreeButton = document.querySelector('.cookie_button_disagree');
 
-  cookieAgreeButton.addEventListener('click', () => {
+  cookieAgreeButton.addEventListener('click', e => {
+    e.preventDefault();
     deleteCookieForm();
     agreeCookie();
   });
 
-  cookieDisagreeButton.addEventListener('click', () => {
+  cookieDisagreeButton.addEventListener('click', e => {
+    e.preventDefault();
     deleteCookieForm();
     disagreeCookie();
   });
@@ -641,7 +643,9 @@
   function agreeCookie() {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    gtag('js', new Date(), {
+      'cookie_expires': 60 * 60 * 24
+    });
     gtag('config', 'G-7TX1KEZSDN', {
       'cookie_expires': 60 * 60 * 24
     });
@@ -652,6 +656,11 @@
   }
 
   function disagreeCookie() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date(), {
+      'cookie_expires': 0
+    });
     gtag('config', 'G-7TX1KEZSDN', {
       'cookie_expires': 0
     });
