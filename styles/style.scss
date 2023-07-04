@@ -47,10 +47,6 @@ $sp: 660px;
       font-size: 32px;
       font-weight: bold;
       user-select: none;
-
-      @include mid {
-        // margin-right: 100px;
-      }
     }
 
     &_nav {
@@ -131,7 +127,11 @@ $sp: 660px;
         margin: 0;
         padding: 0;
         position: relative;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: white;
+
+        &:hover {
+          background-color: black;
+        }
 
         &::after {
           content: '';
