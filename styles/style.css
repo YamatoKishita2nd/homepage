@@ -109,7 +109,10 @@
   margin: 0;
   padding: 0;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+.body .header_nav_child_li:hover {
+  background-color: black;
 }
 .body .header_nav_child_li::after {
   content: "";
