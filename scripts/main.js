@@ -122,6 +122,19 @@
     },
   });
 
+  // スライドショー共通
+  function scrollAdjustment() {
+    setTimeout(() => {
+      if (window.innerWidth > 1200) {
+        window.scrollBy(0, -110);
+      } else if (window.innerWidth > 660) {
+        window.scrollBy(0, -135);
+      } else {
+        window.scrollBy(0, -105);
+      }
+    }, 10);
+  }
+
   // Profileスライドショー
   let profileContents = document.querySelectorAll('#profile .container_content');
   let profileShowNumber = 0;
@@ -160,7 +173,7 @@
       profileShowNumber = profileContents.length - 1;
     }
     profileContentStyle();
-    profileThumbnailStyle()
+    profileThumbnailStyle();
   });
 
   profileNext.addEventListener('click', () => {
@@ -169,7 +182,7 @@
       profileShowNumber = 0;
     }
     profileContentStyle();
-    profileThumbnailStyle()
+    profileThumbnailStyle();
   });
 
   let profileThumbnails = document.querySelectorAll('#profile .container_thumbnail_content');
@@ -185,7 +198,7 @@
     profileThumbnail.addEventListener('click', () => {
       profileShowNumber = index;
       profileContentStyle();
-      profileThumbnailStyle()
+      profileThumbnailStyle();
     });
   });
 
@@ -194,7 +207,8 @@
     profileNavList.addEventListener('click', () => {
       profileShowNumber = index;
       profileContentStyle();
-      profileThumbnailStyle()
+      profileThumbnailStyle();
+      scrollAdjustment();
     });
   });
 
@@ -203,7 +217,8 @@
     profileNavList.addEventListener('click', () => {
       profileShowNumber = index;
       profileContentStyle();
-      profileThumbnailStyle()
+      profileThumbnailStyle();
+      scrollAdjustment();
     });
   });
 
@@ -245,7 +260,7 @@
       universityShowNumber = universityContents.length - 1;
     }
     universityContentStyle();
-    universityThumbnailStyle()
+    universityThumbnailStyle();
   });
 
   universityNext.addEventListener('click', () => {
@@ -254,7 +269,7 @@
       universityShowNumber = 0;
     }
     universityContentStyle();
-    universityThumbnailStyle()
+    universityThumbnailStyle();
   });
 
   let universityThumbnails = document.querySelectorAll('#university .container_thumbnail_content');
@@ -270,7 +285,7 @@
     universityThumbnail.addEventListener('click', () => {
       universityShowNumber = index;
       universityContentStyle();
-      universityThumbnailStyle()
+      universityThumbnailStyle();
     });
   });
 
@@ -279,7 +294,8 @@
     universityNavList.addEventListener('click', () => {
       universityShowNumber = index;
       universityContentStyle();
-      universityThumbnailStyle()
+      universityThumbnailStyle();
+      scrollAdjustment();
     });
   });
 
@@ -288,7 +304,8 @@
     universityNavList.addEventListener('click', () => {
       universityShowNumber = index;
       universityContentStyle();
-      universityThumbnailStyle()
+      universityThumbnailStyle();
+      scrollAdjustment();
     });
   });
 
@@ -330,7 +347,7 @@
       skillShowNumber = skillContents.length - 1;
     }
     skillContentStyle();
-    skillThumbnailStyle()
+    skillThumbnailStyle();
   });
 
   skillNext.addEventListener('click', () => {
@@ -339,7 +356,7 @@
       skillShowNumber = 0;
     }
     skillContentStyle();
-    skillThumbnailStyle()
+    skillThumbnailStyle();
   });
 
   let skillThumbnails = document.querySelectorAll('#skill .container_thumbnail_content');
@@ -355,7 +372,7 @@
     skillThumbnail.addEventListener('click', () => {
       skillShowNumber = index;
       skillContentStyle();
-      skillThumbnailStyle()
+      skillThumbnailStyle();
     });
   });
 
@@ -364,7 +381,8 @@
     skillNavList.addEventListener('click', () => {
       skillShowNumber = index;
       skillContentStyle();
-      skillThumbnailStyle()
+      skillThumbnailStyle();
+      scrollAdjustment();
     });
   });
 
@@ -373,7 +391,8 @@
     skillNavList.addEventListener('click', () => {
       skillShowNumber = index;
       skillContentStyle();
-      skillThumbnailStyle()
+      skillThumbnailStyle();
+      scrollAdjustment();
     });
   });
 
@@ -415,7 +434,7 @@
       hobbyShowNumber = hobbyContents.length - 1;
     }
     hobbyContentStyle();
-    hobbyThumbnailStyle()
+    hobbyThumbnailStyle();
   });
 
   hobbyNext.addEventListener('click', () => {
@@ -424,7 +443,7 @@
       hobbyShowNumber = 0;
     }
     hobbyContentStyle();
-    hobbyThumbnailStyle()
+    hobbyThumbnailStyle();
   });
 
   let hobbyThumbnails = document.querySelectorAll('#hobby .container_thumbnail_content');
@@ -440,7 +459,7 @@
     hobbyThumbnail.addEventListener('click', () => {
       hobbyShowNumber = index;
       hobbyContentStyle();
-      hobbyThumbnailStyle()
+      hobbyThumbnailStyle();
     });
   });
 
@@ -449,7 +468,8 @@
     hobbyNavList.addEventListener('click', () => {
       hobbyShowNumber = index;
       hobbyContentStyle();
-      hobbyThumbnailStyle()
+      hobbyThumbnailStyle();
+      scrollAdjustment();
     });
   });
 
@@ -458,7 +478,8 @@
     hobbyNavList.addEventListener('click', () => {
       hobbyShowNumber = index;
       hobbyContentStyle();
-      hobbyThumbnailStyle()
+      hobbyThumbnailStyle();
+      scrollAdjustment();
     });
   });
 
@@ -500,7 +521,7 @@
       valuesShowNumber = valuesContents.length - 1;
     }
     valuesContentStyle();
-    valuesThumbnailStyle()
+    valuesThumbnailStyle();
   });
 
   valuesNext.addEventListener('click', () => {
@@ -509,7 +530,7 @@
       valuesShowNumber = 0;
     }
     valuesContentStyle();
-    valuesThumbnailStyle()
+    valuesThumbnailStyle();
   });
 
   let valuesThumbnails = document.querySelectorAll('#values .container_thumbnail_content');
@@ -525,7 +546,7 @@
     valuesThumbnail.addEventListener('click', () => {
       valuesShowNumber = index;
       valuesContentStyle();
-      valuesThumbnailStyle()
+      valuesThumbnailStyle();
     });
   });
 
@@ -534,7 +555,8 @@
     valuesNavList.addEventListener('click', () => {
       valuesShowNumber = index;
       valuesContentStyle();
-      valuesThumbnailStyle()
+      valuesThumbnailStyle();
+      scrollAdjustment();
     });
   });
 
@@ -543,9 +565,34 @@
     valuesNavList.addEventListener('click', () => {
       valuesShowNumber = index;
       valuesContentStyle();
-      valuesThumbnailStyle()
+      valuesThumbnailStyle();
+      scrollAdjustment();
     });
   });
+
+  // 問い合わせフォームのスクロール
+  let contactNav = document.querySelector('.header_nav_parent_li_contact a');
+  let contactOverlayNav = document.querySelector('.overlay_nav_parent_li_contact a');
+
+  contactNav.addEventListener('click', () => {
+    contactScrollAdjustment();
+  });
+
+  contactOverlayNav.addEventListener('click', () => {
+    contactScrollAdjustment();
+  });
+
+  function contactScrollAdjustment() {
+    setTimeout(() => {
+      if (window.innerWidth > 1200) {
+        window.scrollBy(0, -69);
+      } else if (window.innerWidth > 660) {
+        window.scrollBy(0, -100);
+      } else {
+        window.scrollBy(0, -70);
+      }
+    }, 10);
+  }
 
   // 問い合わせフォーム
   let contactFormError = document.getElementById('contact-form-error');
@@ -635,7 +682,7 @@
     deleteCookieForm();
     disagreeCookie();
   });
-  
+
   function deleteCookieForm() {
     cookie.style.display = 'none';
   }
