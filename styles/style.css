@@ -38,6 +38,10 @@
      -moz-user-select: none;
           user-select: none;
 }
+.body .header_title_link {
+  text-decoration: none;
+  color: black;
+}
 .body .header_nav {
   margin: 0;
 }
