@@ -123,18 +123,6 @@
   });
 
   // スライドショー共通
-  function scrollAdjustmentChild() {
-    setTimeout(() => {
-      if (window.innerWidth > 1200) {
-        window.scrollBy(0, -110);
-      } else if (window.innerWidth > 660) {
-        window.scrollBy(0, -135);
-      } else {
-        window.scrollBy(0, -105);
-      }
-    }, 10);
-  }
-
   function scrollAdjustmentParent() {
     setTimeout(() => {
       if (window.innerWidth > 1200) {
@@ -143,6 +131,18 @@
         window.scrollBy(0, -100);
       } else {
         window.scrollBy(0, -70);
+      }
+    }, 10);
+  }
+
+  function scrollAdjustmentChild() {
+    setTimeout(() => {
+      if (window.innerWidth > 1200) {
+        window.scrollBy(0, -110);
+      } else if (window.innerWidth > 660) {
+        window.scrollBy(0, -135);
+      } else {
+        window.scrollBy(0, -105);
       }
     }, 10);
   }
