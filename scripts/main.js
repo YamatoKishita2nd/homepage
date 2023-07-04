@@ -651,14 +651,14 @@
   let contactFormEmailError = document.getElementById('contact-form-email-error');
 
   (function() {
-    emailjs.init('VfglVzJjEKsfDdYQO'); // 課題提出の際のみ削除しております
+    emailjs.init('VfglVzJjEKsfDdYQO');
   })();
 
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
     if (checkContactForm() && checkSubmit()) {
       this.contact_number.value = Math.random() * 100000 | 0;
-      emailjs.sendForm('service_c0dgivs', 'template_di5zm1u', this) // 課題提出の際のみ削除しております
+      emailjs.sendForm('service_c0dgivs', 'template_di5zm1u', this)
         .then(function() {
           clearContactForm();
           window.alert('送信しました。');
