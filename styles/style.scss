@@ -47,6 +47,11 @@ $sp: 660px;
       font-size: 32px;
       font-weight: bold;
       user-select: none;
+
+      &_link {
+        text-decoration: none;
+        color: black;
+      }
     }
 
     &_nav {
