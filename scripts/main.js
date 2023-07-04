@@ -123,7 +123,7 @@
   });
 
   // スライドショー共通
-  function scrollAdjustment() {
+  function scrollAdjustmentChild() {
     setTimeout(() => {
       if (window.innerWidth > 1200) {
         window.scrollBy(0, -110);
@@ -131,6 +131,18 @@
         window.scrollBy(0, -135);
       } else {
         window.scrollBy(0, -105);
+      }
+    }, 10);
+  }
+
+  function scrollAdjustmentParent() {
+    setTimeout(() => {
+      if (window.innerWidth > 1200) {
+        window.scrollBy(0, -69);
+      } else if (window.innerWidth > 660) {
+        window.scrollBy(0, -100);
+      } else {
+        window.scrollBy(0, -70);
       }
     }, 10);
   }
@@ -202,14 +214,24 @@
     });
   });
 
+  let profileNav = document.querySelector('.header_nav_parent_li_profile a');
+  profileNav.addEventListener('click', () => {
+    scrollAdjustmentParent();
+  });
+
   let profileNavLists = document.querySelectorAll('.header_nav_parent_li_profile .header_nav_child_li');
   profileNavLists.forEach((profileNavList, index) => {
     profileNavList.addEventListener('click', () => {
       profileShowNumber = index;
       profileContentStyle();
       profileThumbnailStyle();
-      scrollAdjustment();
+      scrollAdjustmentChild();
     });
+  });
+
+  let profileOverlayNav = document.querySelector('.overlay_nav_parent_li_profile a');
+  profileOverlayNav.addEventListener('click', () => {
+    scrollAdjustmentParent();
   });
 
   let profileOverlayNavLists = document.querySelectorAll('.overlay_nav_parent_li_profile .overlay_nav_child_li');
@@ -218,7 +240,7 @@
       profileShowNumber = index;
       profileContentStyle();
       profileThumbnailStyle();
-      scrollAdjustment();
+      scrollAdjustmentChild();
     });
   });
 
@@ -289,14 +311,24 @@
     });
   });
 
+  let universityNav = document.querySelector('.header_nav_parent_li_university a');
+  universityNav.addEventListener('click', () => {
+    scrollAdjustmentParent();
+  });
+
   let universityNavLists = document.querySelectorAll('.header_nav_parent_li_university .header_nav_child_li');
   universityNavLists.forEach((universityNavList, index) => {
     universityNavList.addEventListener('click', () => {
       universityShowNumber = index;
       universityContentStyle();
       universityThumbnailStyle();
-      scrollAdjustment();
+      scrollAdjustmentChild();
     });
+  });
+
+  let universityOverlayNav = document.querySelector('.overlay_nav_parent_li_university a');
+  universityOverlayNav.addEventListener('click', () => {
+    scrollAdjustmentParent();
   });
 
   let universityOverlayNavLists = document.querySelectorAll('.overlay_nav_parent_li_university .overlay_nav_child_li');
@@ -305,7 +337,7 @@
       universityShowNumber = index;
       universityContentStyle();
       universityThumbnailStyle();
-      scrollAdjustment();
+      scrollAdjustmentChild();
     });
   });
 
@@ -376,14 +408,24 @@
     });
   });
 
+  let skillNav = document.querySelector('.header_nav_parent_li_skill a');
+  skillNav.addEventListener('click', () => {
+    scrollAdjustmentParent();
+  });
+
   let skillNavLists = document.querySelectorAll('.header_nav_parent_li_skill .header_nav_child_li');
   skillNavLists.forEach((skillNavList, index) => {
     skillNavList.addEventListener('click', () => {
       skillShowNumber = index;
       skillContentStyle();
       skillThumbnailStyle();
-      scrollAdjustment();
+      scrollAdjustmentChild();
     });
+  });
+
+  let skillOverlayNav = document.querySelector('.overlay_nav_parent_li_skill a');
+  skillOverlayNav.addEventListener('click', () => {
+    scrollAdjustmentParent();
   });
 
   let skillOverlayNavLists = document.querySelectorAll('.overlay_nav_parent_li_skill .overlay_nav_child_li');
@@ -392,7 +434,7 @@
       skillShowNumber = index;
       skillContentStyle();
       skillThumbnailStyle();
-      scrollAdjustment();
+      scrollAdjustmentChild();
     });
   });
 
@@ -463,14 +505,24 @@
     });
   });
 
+  let hobbyNav = document.querySelector('.header_nav_parent_li_hobby a');
+  hobbyNav.addEventListener('click', () => {
+    scrollAdjustmentParent();
+  });
+
   let hobbyNavLists = document.querySelectorAll('.header_nav_parent_li_hobby .header_nav_child_li');
   hobbyNavLists.forEach((hobbyNavList, index) => {
     hobbyNavList.addEventListener('click', () => {
       hobbyShowNumber = index;
       hobbyContentStyle();
       hobbyThumbnailStyle();
-      scrollAdjustment();
+      scrollAdjustmentChild();
     });
+  });
+
+  let hobbyOverlayNav = document.querySelector('.overlay_nav_parent_li_hobby a');
+  hobbyOverlayNav.addEventListener('click', () => {
+    scrollAdjustmentParent();
   });
 
   let hobbyOverlayNavLists = document.querySelectorAll('.overlay_nav_parent_li_hobby .overlay_nav_child_li');
@@ -479,7 +531,7 @@
       hobbyShowNumber = index;
       hobbyContentStyle();
       hobbyThumbnailStyle();
-      scrollAdjustment();
+      scrollAdjustmentChild();
     });
   });
 
@@ -550,14 +602,24 @@
     });
   });
 
+  let valuesNav = document.querySelector('.header_nav_parent_li_values a');
+  valuesNav.addEventListener('click', () => {
+    scrollAdjustmentParent();
+  });
+
   let valuesNavLists = document.querySelectorAll('.header_nav_parent_li_values .header_nav_child_li');
   valuesNavLists.forEach((valuesNavList, index) => {
     valuesNavList.addEventListener('click', () => {
       valuesShowNumber = index;
       valuesContentStyle();
       valuesThumbnailStyle();
-      scrollAdjustment();
+      scrollAdjustmentChild();
     });
+  });
+
+  let valuesOverlayNav = document.querySelector('.overlay_nav_parent_li_values a');
+  valuesOverlayNav.addEventListener('click', () => {
+    scrollAdjustmentParent();
   });
 
   let valuesOverlayNavLists = document.querySelectorAll('.overlay_nav_parent_li_values .overlay_nav_child_li');
@@ -566,35 +628,21 @@
       valuesShowNumber = index;
       valuesContentStyle();
       valuesThumbnailStyle();
-      scrollAdjustment();
+      scrollAdjustmentChild();
     });
   });
 
-  // 問い合わせフォームのスクロール
-  let contactNav = document.querySelector('.header_nav_parent_li_contact a');
-  let contactOverlayNav = document.querySelector('.overlay_nav_parent_li_contact a');
-
-  contactNav.addEventListener('click', () => {
-    contactScrollAdjustment();
-  });
-
-  contactOverlayNav.addEventListener('click', () => {
-    contactScrollAdjustment();
-  });
-
-  function contactScrollAdjustment() {
-    setTimeout(() => {
-      if (window.innerWidth > 1200) {
-        window.scrollBy(0, -69);
-      } else if (window.innerWidth > 660) {
-        window.scrollBy(0, -100);
-      } else {
-        window.scrollBy(0, -70);
-      }
-    }, 10);
-  }
-
   // 問い合わせフォーム
+  let contactNav = document.querySelector('.header_nav_parent_li_contact a');
+  contactNav.addEventListener('click', () => {
+    scrollAdjustmentParent();
+  });
+
+  let contactOverlayNav = document.querySelector('.overlay_nav_parent_li_contact a');
+  contactOverlayNav.addEventListener('click', () => {
+    scrollAdjustmentParent();
+  });
+
   let contactFormError = document.getElementById('contact-form-error');
   let contactFormName = document.getElementById('contact-form-name').querySelector('input');
   let contactFormBelong = document.getElementById('contact-form-belong').querySelector('input');
